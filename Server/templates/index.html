@@ -1,0 +1,45 @@
+<!DOCTYPE html> 
+  <head> 
+     <title>IOT House Control</title> 
+	 <link rel="stylesheet" type="text/css" href="../static/style.css">
+  </head> 
+  <body> 
+		<h1>IOT House Control</h1> 
+		<h2> SENSOR'S STATE </h2> 
+		<h3> TEMPERATURE ==>  {{ temperature  }} </h3> 
+		<h3> MOTION ==>  {{ presence  }} </h3>
+		<h3> PHOTORESISTOR ==>  {{ photoresistor  }} </h3> 
+	
+		<br> 
+		<h2> Actuator Status & Control </h2> 
+		<h3> TURN ON/OFF THE LIGHT ==>  {{ lights  }}  ==>   
+			{% if  lights   == True %} 
+				<a href="/lights/off"class="button">TURN OFF</a> 
+			{% else %} 
+				<a href="/lights/on" class="button">TURN ON</a>  
+			{% endif %}	 
+		</h3> 
+		<h3> OPEN/CLOSE THE WINDOWS ==>  {{ windows  }}  ==>   
+			{% if  windows   == True %} 
+				<a href="/windows/off"class="button">CLOSE</a> 
+			{% else %} 
+				<a href="/windows/on" class="button">OPEN</a>  
+			{% endif %}	 
+		</h3> 
+		<h3> DESIRED TEMPERATURE ==>  {{ des_temperature  }}  ==>   
+				<a href="/temperature/-" class="button">-</a>
+				<a href="/temperature/+"class="button">+</a> 	
+		</h3> 
+		<h3> SET HOLIDAY MODE ==>  {{ holiday  }}  
+			{% if  holiday   == False %} 
+			==> <a href="/holiday/on"class="button">HOLIDAY</a> 
+			{% endif %}	   
+		</h3>
+		<h3> SET PRESENCE ==>  {{ presence  }}  
+			{% if  presence   == False %} 
+			==> <a href="/presence/on"class="button">PRESENCE</a> 
+			{% endif %}	 	 
+		</h3>
+		  
+  </body> 
+</html>

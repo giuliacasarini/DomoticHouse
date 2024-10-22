@@ -1,0 +1,12 @@
+{% import "bootstrap/wtf.html" as wtf %}
+<!DOCTYPE html> 
+  <head> 
+     <title>LOGIN</title>  
+     <link rel="stylesheet" type="text/css" href="../static/style.css">
+  </head> 
+  <body> 
+    <h1>Here you are in the interface to manage your house!</h1>
+	  {{ wtf.quick_form(form) }}
+	  <p class="pt-5"><strong>{{ message }}</strong></p>
+  </body> 
+</html>
